@@ -1,6 +1,7 @@
 {
-    "name": "lazyc/dbc",
+    "name": "smn/dbc",
     "description": "Description of project dbc.",
+    "license" : "MIT",
     "authors": [
         {
             "name": "Simone",
