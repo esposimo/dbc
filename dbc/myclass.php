@@ -9,10 +9,10 @@
 namespace smn\lazyc\dbc;
 
 /**
- * Description of ClauseInterface
+ * Description of myclass
  *
  * @author simon
  */
-class ClauseInterface {
+class myclass {
     //put your code here
 }

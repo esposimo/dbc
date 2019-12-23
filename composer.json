@@ -1,14 +1,6 @@
 {
-    "name": "lazyc/dbc",
-    "type": "library",
-    "version": "1.0.0",
-    "license": "MIT",
-    "description": "Simple ORM",
-    "autoload": {
-        "psr-4": {
-            "smn\\lazyc\\dbc\\": "src/"
-        }
-    },
+    "name": "smn/dbc",
+    "description": "Description of project dbc.",
     "authors": [
         {
             "name": "Simone",
@@ -16,6 +8,11 @@
         }
     ],
     "require": {
-        "php": "^7.2"
+        "php": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "smn\\lazyc\\dbc\\": ""
+        }
     }
 }
