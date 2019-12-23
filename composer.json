@@ -1,0 +1,11 @@
+{
+    "name": "lazyc/dbc",
+    "description": "Simple ORM.",
+    "authors": [
+        {
+            "name": "Simone",
+            "email": "simone.esposito1986@gmail.com"
+        }
+    ],
+    "require": {}
+}
