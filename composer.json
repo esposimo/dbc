@@ -1,11 +1,21 @@
 {
     "name": "lazyc/dbc",
-    "description": "Simple ORM.",
+    "type": "library",
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "Simple ORM",
+    "autoload": {
+        "psr-4": {
+            "smn\\lazyc\\dbc\\": "src/"
+        }
+    },
     "authors": [
         {
             "name": "Simone",
             "email": "simone.esposito1986@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "^7.2"
+    }
 }
