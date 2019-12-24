@@ -49,7 +49,7 @@ interface Parentalnterface extends CatalogInterface {
     /**
      * Restituisce un figlio in base al $name
      * @param \smn\lazyc\dbc\Catalog\String $name
-     * @return CatalogInterface
+     * @return Parentalnterface
      */
     public function getChild(String $name);
     
