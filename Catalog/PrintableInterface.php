@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace smn\lazyc\dbc;
+namespace smn\lazyc\dbc\Catalog;
 
 /**
  *
