@@ -1,5 +1,5 @@
 <?php
-
+namespace smn\lazyc\dbc\Catalog;
 /*
  * L'interfaccia Parental permette di gestire un padre (singolo) e tanti figli
  * di tipo CatalogInterface ad una classe che rappresenta un oggetto di un database
