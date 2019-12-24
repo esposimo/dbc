@@ -13,7 +13,7 @@ namespace smn\lazyc\dbc;
  *
  * @author simon
  */
-class Select implements \smn\lazyc\dbc\ClauseInterface {
+class Clause implements \smn\lazyc\dbc\ClauseInterface {
 
     protected $name;
 
