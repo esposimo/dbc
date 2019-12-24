@@ -18,7 +18,7 @@ interface Parentalnterface extends CatalogInterface {
     /**
      * Configura il padre dell'oggetto di catalogo
      */
-    public function setParent(CatalogInterface $catalog);
+    public function setParent(Parentalnterface $catalog);
     
     /**
      * Restituisce il padre dell'oggetto di catalogo
