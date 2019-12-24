@@ -35,9 +35,9 @@ interface Parentalnterface extends CatalogInterface {
     /**
      * Aggiunge un figlio ad un oggetto
      * @param \smn\lazyc\dbc\Catalog\String $name
-     * @param \smn\lazyc\dbc\Catalog\CatalogInterface $catalog
+     * @param \smn\lazyc\dbc\Catalog\ParentalInterface $catalog
      */
-    public function addChild(String $name, CatalogInterface $catalog);
+    public function addChild(String $name, Parentalnterface $catalog);
     
     /**
      * Restituisce true o false se il figlio esiste
