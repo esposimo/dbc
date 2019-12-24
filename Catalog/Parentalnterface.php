@@ -14,16 +14,48 @@ namespace smn\lazyc\dbc\Catalog;
  *
  * @author simon
  */
-interface Parentalnterface {
+interface Parentalnterface extends CatalogInterface {
+    /**
+     * Configura il padre dell'oggetto di catalogo
+     */
     public function setParent(CatalogInterface $catalog);
     
+    /**
+     * Restituisce il padre dell'oggetto di catalogo
+     * @return self
+     */
     public function getParent();
     
+    /**
+     * Aggiunge un figlio ad un oggetto
+     * @param \smn\lazyc\dbc\Catalog\String $name
+     * @param \smn\lazyc\dbc\Catalog\CatalogInterface $catalog
+     */
     public function addChild(String $name, CatalogInterface $catalog);
     
+    /**
+     * Restituisce true o false se il figlio esiste
+     * @param \smn\lazyc\dbc\Catalog\String $name
+     * @return Bool
+     */
     public function hasChild(String $name);
     
+    /**
+     * Restituisce un figlio in base al $name
+     * @param \smn\lazyc\dbc\Catalog\String $name
+     * @return CatalogInterface
+     */
     public function getChild(String $name);
     
+    /**
+     * Rimuove un figlio in base al $name
+     * @param \smn\lazyc\dbc\Catalog\String $name
+     */
     public function removeChild(String $name);
+    
+    /**
+     * Restituisce un array con tutti i figli
+     * @return Array
+     */
+    public function getChildren();
 }
