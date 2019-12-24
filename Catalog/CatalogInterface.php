@@ -12,9 +12,16 @@ namespace smn\lazyc\dbc\Catalog;
  */
 interface CatalogInterface {
     
-    
+    /**
+     * Configura il nome
+     * @param \smn\lazyc\dbc\Catalog\String $name
+     */
     public function setName(String $name);
     
+    
+    /**
+     * Restituisce il nome
+     */
     public function getName();
     
     

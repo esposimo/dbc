@@ -27,6 +27,12 @@ interface Parentalnterface extends CatalogInterface {
     public function getParent();
     
     /**
+     * Restituisce true o false se l'oggetto ha o meno un parente
+     * @return ParentalInterface
+     */
+    public function hasParent();
+    
+    /**
      * Aggiunge un figlio ad un oggetto
      * @param \smn\lazyc\dbc\Catalog\String $name
      * @param \smn\lazyc\dbc\Catalog\CatalogInterface $catalog
