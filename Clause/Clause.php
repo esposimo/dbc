@@ -172,10 +172,9 @@ class Clause implements BindableInterface, PrintableInterface, ClauseInterface {
      * @param String|Clause $data
      */
     public function addData($data, $key = null) {
-        if (is_null($key)) {
-
+        if ((!$key) || ($key == 0)) {
             $this->data[] = $data;
-        } else if (is_string($key)) {
+        } else if ((is_string($key)) || (is_numeric($key))) {
             $this->data[$key] = $data;
         }
         else {
