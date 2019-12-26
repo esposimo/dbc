@@ -14,7 +14,7 @@ interface CatalogInterface {
     
     /**
      * Configura il nome
-     * @param \smn\lazyc\dbc\Catalog\String $name
+     * @param String $name
      */
     public function setName(String $name);
     
