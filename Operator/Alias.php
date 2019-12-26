@@ -8,6 +8,8 @@
 
 namespace smn\lazyc\dbc\Operator;
 
+use smn\lazyc\dbc\Catalog\PrintableInterface;
+
 /**
  * Description of Alias
  *
