@@ -30,76 +30,67 @@
 namespace smn\lazyc\dbc\Catalog;
 
 /**
- * L'interfaccia PrintableInterface espone metodi per gestire un pattern con<br>
- * relativi placeholder.<br>
- * Il metodo toString() stampa l'oggetto sostituendo i placeholder
+ * Questa interfaccia espone metodi per gestire i figli di un oggetto ed il suo<br>
+ * singolo padre<br>
  *
  * @author Simone Esposito
  * @email simone.esposito1986@gmail.com
  * @license https://opensource.org/licenses/mit-license.html MIT License
  */
-interface PrintableInterface {
+interface ParentalInterface {
 
     /**
-     * Configura il pattern
-     * @param String $pattern
+     * Configura il padre dell'oggetto di catalogo
+     * @param ParentalInterface
      * @return self
      */
-    public function setPattern($pattern);
+    public function setParent(ParentalInterface $catalog);
 
     /**
-     * Restituisce il pattern. Se $use_map è false, non rimappa i placeholder
-     * @param Bool $use_map
-     * @return String
-     */
-    public function getPattern($use_map = true);
-
-    /**
-     * Renderizza la stringa
-     * @return String
-     */
-    public function toString();
-
-    /**
-     * Aggiunge un placeholder
-     * @param String $name
-     * @param String $value
+     * Restituisce il padre dell'oggetto di catalogo
      * @return self
      */
-    public function addPlaceHolder($name, $value);
+    public function getParent();
 
     /**
-     * Rimuove un placeholder
+     * Restituisce true o false se l'oggetto ha o meno un parente
+     * @return Bool
+     */
+    public function hasParent();
+
+    /**
+     * Aggiunge un figlio ad un oggetto. L'oggetto viene mappato tramite il 
+     * $name così può essere eliminato quando necessario
+     * @param String $name
+     * @param ParentalInterface $catalog
+     * @return self
+     */
+    public function addChild(String $name, ParentalInterface $catalog);
+
+    /**
+     * Restituisce true o false se il figlio con nome $name esiste
+     * @param String $name
+     * @return Bool
+     */
+    public function hasChild(String $name);
+
+    /**
+     * Restituisce il figlio con nome $name
+     * @param String $name
+     * @return bool|ParentalInterface
+     */
+    public function getChild(String $name);
+
+    /**
+     * Rimuove il figlio $name
      * @param String $name
      * @return self
      */
-    public function removePlaceHolder($name);
+    public function removeChild(String $name);
 
     /**
-     * Restituisce true o false se un placeholder esiste
-     * @param String $name
-     * @return bool
-     */
-    public function hasPlaceHolder($name);
-
-    /**
-     * Restituisce il valore del placeholder $name
-     * @param String $name
-     * @return String|bool
-     */
-    public function getPlaceHolder($name);
-
-    /**
-     * Restituisce tutti i placeholder. Se $use_map è false, non aggiunge il prefisso
-     * ai placeholder
-     * @param bool $use_map
+     * Restituisce un array con tutti i figli
      * @return Array
      */
-    public function getPlaceHolders($use_map = true);
-
-    /**
-     * Cancella tutti i placeholder
-     * @return self
-     */
-    public function cleanPlaceHolder();
+    public function getChildren();
 }
