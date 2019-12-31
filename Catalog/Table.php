@@ -63,18 +63,7 @@ class Table extends AbstractCatalogObject {
         $schema_operator->setPattern('%dbschema$s.%inherit$s');
         $schema_operator->addPlaceHolder('dbschema', $catalog->getName());
         $catalog->addOperator('dbschema', $schema_operator);
-//        $this->placeholders = array_merge($this->placeholders, $catalog->getPlaceHolders(true));
         parent::setParent($catalog);
-//        $newpattern = sprintf('%s.%s', $this->getParent()->getPattern(true), $this->getPattern(false));
-//        $this->setPattern($newpattern);
         return $this;
     }
-
-//    public function setParent(ParentalInterface $catalog) {
-//        $this->placeholders = array_merge($this->placeholders, $catalog->getPlaceHolders(true));
-//        parent::setParent($catalog);
-//        $newpattern = sprintf('%s.%s', $this->getParent()->getPattern(true), $this->getPattern(false));
-//        $this->setPattern($newpattern);
-//        return $this;
-//    }
 }

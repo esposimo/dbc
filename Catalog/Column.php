@@ -116,10 +116,11 @@ class Column extends AbstractCatalogObject implements BindableInterface {
      * @return self
      */
     public function setParent(ParentalInterface $catalog) {
-        $this->placeholders = array_merge($this->placeholders, $catalog->getPlaceHolders(true));
+        $schema_operator = new \smn\lazyc\dbc\Operator\AbstractOperator();
+        $schema_operator->setPattern('%tablename$s.%inherit$s');
+        $schema_operator->addPlaceHolder('tablename', $catalog->getName());
+        $catalog->addOperator('table', $schema_operator);
         parent::setParent($catalog);
-        $newpattern = sprintf('%s.%s', $this->getParent()->getPattern(true), $this->getPattern(false));
-        $this->setPattern($newpattern);
         return $this;
     }
 
