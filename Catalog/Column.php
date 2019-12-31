@@ -28,6 +28,7 @@
  */
 
 namespace smn\lazyc\dbc\Catalog;
+use PDO;
 
 /**
  * La classe Column rappresenta una colonna di una tabella del database.<br>
@@ -128,13 +129,13 @@ class Column extends AbstractCatalogObject implements BindableInterface {
      * @return String
      */
     public function toString() {
-        if ($this->hasParent()) {
-            $newpattern = sprintf('%s.%s', $this->getParent()->getPattern(true), $this->getPattern(false));
-            $this->setPattern($newpattern);
-            foreach ($this->getPlaceHolders() as $key => $value) {
-                $this->addPlaceHolder($key, $value);
-            }
-        }
+//        if ($this->hasParent()) {
+//            $newpattern = sprintf('%s.%s', $this->getParent()->getPattern(true), $this->getPattern(false));
+//            $this->setPattern($newpattern);
+//            foreach ($this->getPlaceHolders() as $key => $value) {
+//                $this->addPlaceHolder($key, $value);
+//            }
+//        }
         return AbstractCatalogObject::renderInstance($this);
     }
 
