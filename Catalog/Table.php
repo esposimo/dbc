@@ -55,14 +55,26 @@ class Table extends AbstractCatalogObject {
 
     /**
      * Configura il padre della tabella, ovvero il nome dello schema
-     * @param ParentalInterface $catalog Nome dell'oggetto di catalogo padre
+     * @param AbstractCatalogObject $catalog Nome dell'oggetto di catalogo padre
      * @return self
      */
-    public function setParent(ParentalInterface $catalog) {
-        $this->placeholders = array_merge($this->placeholders, $catalog->getPlaceHolders(true));
+    public function setParent(AbstractCatalogObject $catalog) {
+        $schema_operator = new \smn\lazyc\dbc\Operator\AbstractOperator();
+        $schema_operator->setPattern('%dbschema$s.%inherit$s');
+        $schema_operator->addPlaceHolder('dbschema', $catalog->getName());
+        $catalog->addOperator('dbschema', $schema_operator);
+//        $this->placeholders = array_merge($this->placeholders, $catalog->getPlaceHolders(true));
         parent::setParent($catalog);
-        $newpattern = sprintf('%s.%s', $this->getParent()->getPattern(true), $this->getPattern(false));
-        $this->setPattern($newpattern);
+//        $newpattern = sprintf('%s.%s', $this->getParent()->getPattern(true), $this->getPattern(false));
+//        $this->setPattern($newpattern);
         return $this;
     }
+
+//    public function setParent(ParentalInterface $catalog) {
+//        $this->placeholders = array_merge($this->placeholders, $catalog->getPlaceHolders(true));
+//        parent::setParent($catalog);
+//        $newpattern = sprintf('%s.%s', $this->getParent()->getPattern(true), $this->getPattern(false));
+//        $this->setPattern($newpattern);
+//        return $this;
+//    }
 }
