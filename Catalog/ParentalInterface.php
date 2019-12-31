@@ -37,7 +37,7 @@ namespace smn\lazyc\dbc\Catalog;
  * @email simone.esposito1986@gmail.com
  * @license https://opensource.org/licenses/mit-license.html MIT License
  */
-interface ParentalInterface extends CatalogInterface {
+interface ParentalInterface {
 
     /**
      * Configura il padre dell'oggetto di catalogo
