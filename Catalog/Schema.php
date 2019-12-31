@@ -37,7 +37,7 @@ use smn\lazyc\dbc\Catalog\AbstractCatalogObject;
  * @email simone.esposito1986@gmail.com
  * @license https://opensource.org/licenses/mit-license.html MIT License
  */
-class Schema extends AbstractCatalogObject {
+class Schema extends CatalogObjectInterface {
 
     /**
      * Pattern dello schema

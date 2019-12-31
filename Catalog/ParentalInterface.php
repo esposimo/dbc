@@ -44,7 +44,7 @@ interface ParentalInterface {
      * @param ParentalInterface
      * @return self
      */
-    public function setParent(ParentalInterface $catalog);
+    public function setParent(CatalogObjectInterface $catalog);
 
     /**
      * Restituisce il padre dell'oggetto di catalogo

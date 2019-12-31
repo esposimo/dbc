@@ -39,7 +39,7 @@ use PDO;
  * @email simone.esposito1986@gmail.com
  * @license https://opensource.org/licenses/mit-license.html MIT License
  */
-class Column extends AbstractCatalogObject implements BindableInterface {
+class Column extends CatalogObjectInterface implements BindableInterface {
 
     /**
      * Nome da bindare alla colonna
@@ -112,10 +112,10 @@ class Column extends AbstractCatalogObject implements BindableInterface {
 
     /**
      * Configura il padre e ne eredita i placeholder. Modifica il pattern
-     * @param ParentalInterface $catalog
+     * @param CatalogObjectInterface $catalog
      * @return self
      */
-    public function setParent(ParentalInterface $catalog) {
+    public function setParent(CatalogObjectInterface $catalog) {
         $schema_operator = new \smn\lazyc\dbc\Operator\AbstractOperator();
         $schema_operator->setPattern('%tablename$s.%inherit$s');
         $schema_operator->addPlaceHolder('tablename', $catalog->getName());
@@ -130,13 +130,6 @@ class Column extends AbstractCatalogObject implements BindableInterface {
      * @return String
      */
     public function toString() {
-//        if ($this->hasParent()) {
-//            $newpattern = sprintf('%s.%s', $this->getParent()->getPattern(true), $this->getPattern(false));
-//            $this->setPattern($newpattern);
-//            foreach ($this->getPlaceHolders() as $key => $value) {
-//                $this->addPlaceHolder($key, $value);
-//            }
-//        }
         return AbstractCatalogObject::renderInstance($this);
     }
 

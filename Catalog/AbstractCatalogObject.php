@@ -40,7 +40,7 @@ use smn\lazyc\dbc\Operator\OperatorInterface;
  * @email simone.esposito1986@gmail.com
  * @license https://opensource.org/licenses/mit-license.html MIT License
  */
-class AbstractCatalogObject implements ParentalInterface, PrintableInterface, CatalogInterface {
+class AbstractCatalogObject implements CatalogObjectInterface {
 
     /**
      * Lista dei figli
@@ -99,10 +99,10 @@ class AbstractCatalogObject implements ParentalInterface, PrintableInterface, Ca
      * Aggiunge un figlio all'oggetto. Configura per la classe figlio se stessa
      * come padre
      * @param String $name
-     * @param ParentalInterface $catalog
+     * @param CatalogObjectInterface $catalog
      * @return self
      */
-    public function addChild(String $name, ParentalInterface $catalog) {
+    public function addChild(String $name, CatalogObjectInterface $catalog) {
         if (!$this->hasChild($name)) {
             $this->children[$name] = $catalog;
             $catalog->setParent($this);
@@ -113,7 +113,7 @@ class AbstractCatalogObject implements ParentalInterface, PrintableInterface, Ca
     /**
      * Restituisce un figlio se esiste, altrimenti false
      * @param String $name
-     * @return Bool|ParentalInterface
+     * @return Bool|CatalogObjectInterface
      */
     public function getChild(String $name) {
         return ($this->hasChild($name)) ? $this->children[$name] : false;
@@ -158,7 +158,7 @@ class AbstractCatalogObject implements ParentalInterface, PrintableInterface, Ca
 
     /**
      * Restituisce il padre
-     * @return ParentalInterface|AbstractCatalogObject
+     * @return CatalogObjectInterface
      */
     public function getParent() {
         return $this->parent;
@@ -166,10 +166,10 @@ class AbstractCatalogObject implements ParentalInterface, PrintableInterface, Ca
 
     /**
      * Configura il padre dell'oggetto 
-     * @param ParentalInterface $catalog
+     * @param CatalogObjectInterface $catalog
      * @return self
      */
-    public function setParent(ParentalInterface $catalog) {
+    public function setParent(CatalogObjectInterface $catalog) {
         $this->parent = $catalog;
         return $this;
     }
@@ -308,10 +308,10 @@ class AbstractCatalogObject implements ParentalInterface, PrintableInterface, Ca
     /**
      * Questo è un algoritmo preso dalla documentazione ufficiale della funzione vsprintf()
      * @link https://www.php.net/manual/en/function.vsprintf.php A little help from user
-     * @param AbstractCatalogObject $instance
+     * @param CatalogObjectInterface $instance
      * @return String
      */
-    public static function renderInstance(AbstractCatalogObject $instance) {
+    public static function renderInstance(CatalogObjectInterface $instance) {
 
         foreach ($instance->getOperators() as $operator) {
             $operator->configureInstance($instance);

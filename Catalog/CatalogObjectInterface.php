@@ -30,40 +30,14 @@
 namespace smn\lazyc\dbc\Catalog;
 
 /**
- * Description of Table
+ * Interfaccia per definire un oggetto di catalogo
  *
  * @author Simone Esposito
  * @email simone.esposito1986@gmail.com
  * @license https://opensource.org/licenses/mit-license.html MIT License
  */
-class Table extends CatalogObjectInterface {
+interface CatalogObjectInterface extends ParentalInterface, PrintableInterface, CatalogInterface {
 
-    /**
-     * Pattern della tabella
-     * @var type 
-     */
-    protected $pattern = '%tablename$s';
-
-    /**
-     * Costruttore della classe. Richiama il parent e aggiunge un placeholder
-     * @param String $name Nome della tabella
-     */
-    public function __construct($name) {
-        parent::__construct($name);
-        $this->addPlaceHolder('tablename', $name);
-    }
-
-    /**
-     * Configura il padre della tabella, ovvero il nome dello schema
-     * @param ParentalInterface $catalog Nome dell'oggetto di catalogo padre
-     * @return self
-     */
-    public function setParent(CatalogObjectInterface $catalog) {
-        $schema_operator = new \smn\lazyc\dbc\Operator\AbstractOperator();
-        $schema_operator->setPattern('%dbschema$s.%inherit$s');
-        $schema_operator->addPlaceHolder('dbschema', $catalog->getName());
-        $this->addOperator('dbschema', $schema_operator);
-        parent::setParent($catalog);
-        return $this;
-    }
+    
+    
 }
