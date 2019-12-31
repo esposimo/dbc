@@ -62,7 +62,7 @@ class Table extends AbstractCatalogObject {
         $schema_operator = new \smn\lazyc\dbc\Operator\AbstractOperator();
         $schema_operator->setPattern('%dbschema$s.%inherit$s');
         $schema_operator->addPlaceHolder('dbschema', $catalog->getName());
-        $catalog->addOperator('dbschema', $schema_operator);
+        $this->addOperator('dbschema', $schema_operator);
         parent::setParent($catalog);
         return $this;
     }
