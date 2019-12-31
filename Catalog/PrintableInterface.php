@@ -38,7 +38,7 @@ namespace smn\lazyc\dbc\Catalog;
  * @email simone.esposito1986@gmail.com
  * @license https://opensource.org/licenses/mit-license.html MIT License
  */
-interface PrintableInterface extends CatalogInterface {
+interface PrintableInterface {
 
     /**
      * Configura il pattern
