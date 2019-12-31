@@ -27,6 +27,7 @@
  * 
  */
 
+
 namespace smn\lazyc\dbc\Catalog;
 use smn\lazyc\dbc\Catalog\AbstractCatalogObject;
 
