@@ -119,7 +119,7 @@ class Column extends AbstractCatalogObject implements BindableInterface {
         $schema_operator = new \smn\lazyc\dbc\Operator\AbstractOperator();
         $schema_operator->setPattern('%tablename$s.%inherit$s');
         $schema_operator->addPlaceHolder('tablename', $catalog->getName());
-        $catalog->addOperator('table', $schema_operator);
+        $this->addOperator('table', $schema_operator);
         parent::setParent($catalog);
         return $this;
     }
