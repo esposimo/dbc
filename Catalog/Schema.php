@@ -36,7 +36,7 @@ namespace smn\lazyc\dbc\Catalog;
  * @email simone.esposito1986@gmail.com
  * @license https://opensource.org/licenses/mit-license.html MIT License
  */
-class Schema extends smn\lazyc\dbc\Catalog\AbstractCatalogObject {
+class Schema extends AbstractCatalogObject {
 
     /**
      * Pattern dello schema

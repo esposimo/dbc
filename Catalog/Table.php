@@ -58,7 +58,7 @@ class Table extends AbstractCatalogObject {
      * @param ParentalInterface $catalog Nome dell'oggetto di catalogo padre
      * @return self
      */
-    public function setParent(smn\lazyc\dbc\Catalog\ParentalInterface $catalog) {
+    public function setParent(ParentalInterface $catalog) {
         $this->placeholders = array_merge($this->placeholders, $catalog->getPlaceHolders(true));
         parent::setParent($catalog);
         $newpattern = sprintf('%s.%s', $this->getParent()->getPattern(true), $this->getPattern(false));
