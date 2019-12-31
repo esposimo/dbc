@@ -55,10 +55,10 @@ class Table extends AbstractCatalogObject {
 
     /**
      * Configura il padre della tabella, ovvero il nome dello schema
-     * @param AbstractCatalogObject $catalog Nome dell'oggetto di catalogo padre
+     * @param ParentalInterface $catalog Nome dell'oggetto di catalogo padre
      * @return self
      */
-    public function setParent(AbstractCatalogObject $catalog) {
+    public function setParent(ParentalInterface $catalog) {
         $schema_operator = new \smn\lazyc\dbc\Operator\AbstractOperator();
         $schema_operator->setPattern('%dbschema$s.%inherit$s');
         $schema_operator->addPlaceHolder('dbschema', $catalog->getName());
