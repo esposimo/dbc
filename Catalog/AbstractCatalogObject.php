@@ -44,13 +44,13 @@ class AbstractCatalogObject implements CatalogObjectInterface {
 
     /**
      * Lista dei figli
-     * @var ParentalInterface[] 
+     * @var CatalogObjectInterface[] 
      */
     protected $children = [];
 
     /**
      * Oggetto padre dell'oggeto di catalogo
-     * @var ParentalInterface
+     * @var CatalogObjectInterface
      */
     protected $parent = null;
 
